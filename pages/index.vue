@@ -1,42 +1,86 @@
 <template>
-  <section class="container">
-    <contact />
-  </section>
+  <form
+    name="contact"
+    method="post"
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+  >
+    <input
+      type="hidden"
+      netlify
+      name="form-name"
+      value="contact"
+    >
+    <div class="form-block">
+      <input
+        v-model="form.name"
+        type="text"
+        name="name"
+        placeholder="Your name"
+      >
+    </div>
+    <div class="form-block">
+      <input
+        v-model="form.email"
+        type="email"
+        name="email"
+        placeholder="Your email address"
+      >
+    </div>
+    <div class="form-block">
+      <textarea
+        v-model="form.message"
+        name="message"
+        placeholder="Please leave a short summary of the project you would like us to help with"
+      />
+    </div>
+    <div class="form-block">
+      <button
+        type="submit"
+        @click.prevent="handleSubmit"
+      >Send</button>
+    </div>
+  </form>
 </template>
 
+<style lang="scss">
+form {
+  @apply w-full px-6 mt-2 z-10 relative text-grey-darkest;
+}
+.form-block input,
+textarea {
+  @apply w-full p-4 mb-2 leading-normal;
+}
+</style>
+
 <script>
-import Contact from '~/components/Contact.vue'
 export default {
-  components: {
-    Contact
+  data() {
+    return {
+      form: {
+        name: '',
+        email: '',
+        message: ''
+      }
+    }
+  },
+  methods: {
+    encode(data) {
+      return Object.keys(data)
+        .map(
+          key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+        )
+        .join('&')
+    },
+    handleSubmit() {
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: this.encode({ 'form-name': 'contact', ...this.form })
+      })
+        .then(() => alert('Success!'))
+        .catch(error => alert(error))
+    }
   }
 }
 </script>
-
-<style>
-.container {
-  @apply min-h-screen flex justify-center items-center text-center mx-auto;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
