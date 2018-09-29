@@ -3,11 +3,11 @@
     name="ContactUs"
     method="post"
     data-netlify="true"
-    netlify
     data-netlify-honeypot="bot-field"
   >
     <input
       type="hidden"
+      netlify
       name="form-name"
       value="contact"
     >
