@@ -4,6 +4,7 @@
     method="POST"
     data-netlify="true"
     data-netlify-honeypot="bot-field"
+    @submit.prevent="handleSubmit"
   >
     <input
       type="hidden"
