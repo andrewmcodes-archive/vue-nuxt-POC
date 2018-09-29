@@ -1,6 +1,6 @@
 <template>
   <form
-    name="ContactUs"
+    name="contact"
     method="post"
     data-netlify="true"
     data-netlify-honeypot="bot-field"
@@ -55,7 +55,6 @@ textarea {
 
 <script>
 export default {
-  name: 'ContactUs',
   data() {
     return {
       form: {

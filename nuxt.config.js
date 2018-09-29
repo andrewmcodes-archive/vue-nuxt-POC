@@ -30,7 +30,9 @@ module.exports = {
       }
     ]
   },
-
+  generate: {
+    routes: ['/']
+  },
   /*
    ** Customize the progress-bar color
    */
@@ -51,7 +53,7 @@ module.exports = {
   /*
    ** Nuxt.js modules
    */
-  modules: [],
+  modules: ['@nuxtjs/font-awesome'],
 
   /*
    ** Build configuration
