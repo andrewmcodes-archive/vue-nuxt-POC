@@ -73,7 +73,7 @@ export default {
         .join('&')
     },
     handleSubmit() {
-      fetch('', {
+      fetch('/index', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: this.encode({ 'form-name': 'contact', ...this.form })
