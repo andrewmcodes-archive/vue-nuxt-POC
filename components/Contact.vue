@@ -1,14 +1,14 @@
 <template>
   <form
     name="contactForm"
-    method="post"
+    method="POST"
     data-netlify="true"
     data-netlify-honeypot="bot-field"
   >
     <input
       type="hidden"
       name="form-name"
-      value="ask-team-vue"
+      value="contact"
     >
     <div class="form-block">
       <input
@@ -42,7 +42,7 @@
   </form>
 </template>
 
-<style>
+<style lang="scss">
 form {
   @apply w-full px-6 mt-2 z-10 relative text-grey-darkest;
 }
