@@ -31,7 +31,7 @@ module.exports = {
     ]
   },
   generate: {
-    routes: ['/', '/index.html']
+    routes: ['/']
   },
   /*
    ** Customize the progress-bar color
