@@ -15,7 +15,8 @@
   },
   "dependencies": {
     "cross-env": "^5.2.0",
-    "nuxt": "^2.0.0"
+    "nuxt": "^2.0.0",
+    "nuxt-edge": "^2.0.0-25635869.0c1d94a"
   },
   "devDependencies": {
     "autoprefixer": "^8.6.4",
