@@ -1,8 +1,9 @@
 <template>
   <form
-    name="contact"
-    method="POST"
+    name="ContactUs"
+    method="post"
     data-netlify="true"
+    netlify
     data-netlify-honeypot="bot-field"
   >
     <input
@@ -54,6 +55,7 @@ textarea {
 
 <script>
 export default {
+  name: 'ContactUs',
   data() {
     return {
       form: {
