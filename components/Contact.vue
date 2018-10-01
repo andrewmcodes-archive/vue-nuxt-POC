@@ -7,7 +7,6 @@
   >
     <input
       type="hidden"
-      netlify
       name="form-name"
       value="contact"
     >
