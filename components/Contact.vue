@@ -9,6 +9,7 @@
       type="hidden"
       name="form-name"
       value="contact"
+      action="/"
     >
     <div class="form-block">
       <input
