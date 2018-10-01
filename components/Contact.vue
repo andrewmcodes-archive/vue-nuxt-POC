@@ -11,6 +11,10 @@
       value="contact"
       action="/"
     >
+    <input
+      type="hidden"
+      name="bot-field"
+    >
     <div class="form-block">
       <input
         v-model="form.name"
