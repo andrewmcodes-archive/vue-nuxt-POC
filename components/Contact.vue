@@ -4,6 +4,7 @@
     method="post"
     data-netlify="true"
     data-netlify-honeypot="bot-field"
+    netlify
   >
     <input
       type="hidden"
